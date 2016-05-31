@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers.js"></script>
+  </head>
+  <body>
+    <div ng-controller="ToDoController as controller">
+      <!-- ng-repeat assigns temporary variable 'todo' to
+        every item in controller.todos, our ViewModel.
+      -->
+      <p ng-repeat="todo in controller.todos">
+        {{ todo.text }}: {{ todo.completed ? "complete" : "not complete" }}
+      </p>
+      <!-- ng-model allows us to tell angular to link
+      what happens on the input to a parameter in
+      our controller, in this case one called "todoText"
+     -->
+      <input type="text" ng-model="todoText">
+      <!--
+      now we can pass that parameter (todoText)
+      into our controller expression as an argument
+    -->
+      <button ng-click='controller.addToDo(todoText);'>Add a ToDo</button>
+      <button 
+    </div>
+  </body>
+</html>
